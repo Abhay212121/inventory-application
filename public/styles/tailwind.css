@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme{
+    --font-body: "Dancing Script", cursive;
+    --font-heading: "EB Garamond", serif;
+    --font-text:  "Oswald", sans-serif;
+}

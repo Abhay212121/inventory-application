@@ -1,0 +1,10 @@
+<div class=" border-r-4 border-dashed w-80 min-h-150">
+  <p class="text-3xl font-body my-4 text-center">Categories.</p>
+  <a class="text-3xl block border-b-3 mx-8 text-center  font-text" href="/">All Categories</a>
+  <div class="flex flex-col gap-6 mt-8 items-center">
+    <a href="/new/category" class="border-2 rounded-xl p-2 text-xl font-heading">Create New Category</a>
+    <% categories.forEach((category) =>{ %>
+    <a href="/<%= category.name %>" class="text-xl font-text"> <%= category.category_name %></a>
+    <%}) %>
+  </div>
+</div>

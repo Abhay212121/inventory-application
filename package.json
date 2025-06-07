@@ -3,15 +3,20 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node --watch app.js"
+    "start": "node --watch app.js",
+    "tailwind": "npx tailwindcss -i public/styles/tailwind.css -o public/styles/style.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
     "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "pg": "^8.16.0"
+    "express-validator": "^7.2.1",
+    "pg": "^8.16.0",
+    "tailwindcss": "^4.1.8"
   }
 }

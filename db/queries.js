@@ -1,8 +1,18 @@
 const pool = require('./pool')
 
-async function getAllItemsFromDb() {
+const getAllItemsFromDb = async () => {
     const { rows } = await pool.query('SELECT * FROM items');
     return rows;
 }
 
-module.exports = { getAllItemsFromDb }
+const getAllCategoriesFromDb = async () => {
+    const { rows } = await pool.query('SELECT * FROM category')
+    return rows;
+
+}
+
+const postNewCategoryInDb = async (categoryName) => {
+    await pool.query('Insert INTO category(category_name) VALUES ($1)', [categoryName])
+}
+
+module.exports = { getAllItemsFromDb, getAllCategoriesFromDb, postNewCategoryInDb }

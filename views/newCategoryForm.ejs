@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+  <%- include('./partials/header') %>
+  <div class="flex items-center justify-center h-100">
+    <form action="/new/category" method="post" class="flex flex-col w-[30%] border-2 p-8 gap-2 border-dashed border-4 rounded-3xl">
+      <p class="font-body text-center mb-4 text-2xl">Create New Category</p>
+      <%- include('partials/errors',{errors}) %>
+      <label for="categoryName" class="font-text">Category Name</label>
+      <input type=" text" name="categoryName" id="categoryName" placeholder="Enter New Category" class="font-text border-2 p-2 rounded-xl">
+      <button type="submit" class="border-3 rounded-xl border-dashed font-body text-xl w-40 mx-auto mt-4 p-2">Add Category</button>
+    </form>
+  </div>
+</body>
+
+</html>
