@@ -1,8 +1,8 @@
 const { Router } = require('express')
-const getAllItems = require('../controllers/indexController')
+const getItems = require('../controllers/itemController')
 
 const indexRoute = Router()
 
-indexRoute.get('/', getAllItems)
+indexRoute.get('/', getItems)
 
 module.exports = indexRoute

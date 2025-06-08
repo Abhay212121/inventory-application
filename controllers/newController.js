@@ -1,11 +1,17 @@
 const db = require('../db/queries')
 const { body, validationResult } = require('express-validator')
 
+const nameRegex = /^[A-Za-z ]+$/;
 const alphaErr = 'must only contain alphabets.'
-const lengthErr = 'must be between 1 to 10 characters.'
+const lengthErr = 'is exceeding the characters.'
 
 const validateCategoryName = [
-    body('categoryName').trim().isAlpha().withMessage(`Category name ${alphaErr}`).isLength({ min: 1, max: 10 }).withMessage(`Category name ${lengthErr}`)
+    body('categoryName').trim().matches(nameRegex).withMessage(`Category name ${alphaErr}`).isLength({ min: 1, max: 10 }).withMessage(`Category name ${lengthErr}`)
+]
+
+const validateItemName = [
+    body('itemName').trim().matches(nameRegex).withMessage(`Item name ${alphaErr}`).isLength({ min: 1, max: 20 }).withMessage(`Item name ${lengthErr}`),
+    body('categoryId').notEmpty().withMessage('Select a Category')
 ]
 
 const renderNewCategoryForm = (req, res) => {
@@ -22,5 +28,22 @@ const handleNewCategorySubmission = [validateCategoryName, async (req, res) => {
     res.redirect('/')
 }]
 
+const renderNewItemForm = async (req, res) => {
+    const categories = await db.getAllCategoriesFromDb()
+    res.render('newItemForm', { errors: [], categories: categories })
+}
 
-module.exports = { renderNewCategoryForm, handleNewCategorySubmission }
+const handleNewItemSubmission = [validateItemName, async (req, res) => {
+    const errors = validationResult(req)
+    const categories = await db.getAllCategoriesFromDb()
+    if (!errors.isEmpty()) {
+        return res.status(400).render('newItemForm', { errors: errors.array(), categories: categories })
+    }
+    const itemName = req.body.itemName;
+    const categoryId = req.body.categoryId
+
+    await db.postNewItemInDb(itemName, categoryId)
+    res.redirect('/')
+}]
+
+module.exports = { renderNewCategoryForm, handleNewCategorySubmission, renderNewItemForm, handleNewItemSubmission }

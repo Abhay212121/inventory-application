@@ -14,13 +14,18 @@
 <body>
   <%- include('./partials/header') %>
   <div class="flex ">
-    <%- include('sidebar',{categories:categories}) %>
+    <%- include('sidebar',{categories:categories, categoryFlag:categoryFlag}) %>
     <div>
       <p class="text-3xl my-4 ml-10 font-body">Items</p>
       <div class="flex flex-wrap gap-8 px-5">
         <% items.forEach((item) =>{ %>
         <%- include('item',{product:item}) %>
         <%})%>
+      </div>
+      <div class="absolute w-12 bottom-5 right-10">
+        <a href="/new/item">
+          <img src="/images/add-icon.svg" alt="Icon not found" class="h-fit w-fit">
+        </a>
       </div>
     </div>
   </div>

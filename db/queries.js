@@ -20,4 +20,21 @@ const getCategoryItemsFromDb = async (categoryId) => {
     return rows;
 }
 
-module.exports = { getAllItemsFromDb, getAllCategoriesFromDb, postNewCategoryInDb, getCategoryItemsFromDb }
+const postNewItemInDb = async (item_name, category_id) => {
+    await pool.query('INSERT INTO items(item_name,category_id) VALUES($1,$2)', [item_name, category_id]);
+}
+
+const getCategoryNameUsingId = async (id) => {
+    const { rows } = await pool.query('SELECT * FROM category WHERE id = ($1)', [id])
+    return rows;
+}
+
+const updateCategoryNameInDb = async (id, newName) => {
+    pool.query(`UPDATE category SET category_name = ($1) WHERE id =${id}`, [newName])
+}
+
+const deleteCategoryInDb = async (id) => {
+    pool.query(`DELETE FROM category WHERE id=${id}`)
+}
+
+module.exports = { getAllItemsFromDb, getAllCategoriesFromDb, postNewCategoryInDb, getCategoryItemsFromDb, postNewItemInDb, getCategoryNameUsingId, updateCategoryNameInDb, deleteCategoryInDb }

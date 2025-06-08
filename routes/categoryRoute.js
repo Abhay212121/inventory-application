@@ -1,8 +1,13 @@
 const { Router } = require('express');
-const { getCategoryItems } = require('../controllers/categoryController');
+const getItems = require('../controllers/itemController');
+const { getEditCategoryForm, postCategory } = require('../controllers/editController');
 
 const categoryRoute = Router()
 
-categoryRoute.get('/:id', getCategoryItems)
+categoryRoute.get('/:id', getItems)
+
+categoryRoute.get('/:id/edit', getEditCategoryForm)
+categoryRoute.post('/:id/edit', postCategory)
+
 
 module.exports = categoryRoute;
