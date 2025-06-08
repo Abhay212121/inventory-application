@@ -15,4 +15,9 @@ const postNewCategoryInDb = async (categoryName) => {
     await pool.query('Insert INTO category(category_name) VALUES ($1)', [categoryName])
 }
 
-module.exports = { getAllItemsFromDb, getAllCategoriesFromDb, postNewCategoryInDb }
+const getCategoryItemsFromDb = async (categoryId) => {
+    const { rows } = await pool.query('SELECT * FROM items WHERE category_id = $1', [categoryId])
+    return rows;
+}
+
+module.exports = { getAllItemsFromDb, getAllCategoriesFromDb, postNewCategoryInDb, getCategoryItemsFromDb }
