@@ -1,16 +1,19 @@
-<div class=" border-r-4 border-dashed min-w-80 min-h-150">
-  <p class="text-3xl font-body my-4 text-center">Categories.</p>
-  <a class="text-3xl block border-b-3 mx-8 text-center  font-text" href="/">All Categories</a>
+<div class=" border-r-4  min-w-80 min-h-150">
+  <p class="text-3xl font-body my-4 text-center text-white cursor-default">Categories</p>
+  <a class="relative group text-3xl block border-b-3 mx-8 text-center  font-text" href="/">All Categories
+  </a>
   <div class="flex flex-col gap-6 mt-8 items-center">
-    <a href="/new/category" class="border-2 rounded-xl p-2 text-xl font-heading">Create New Category</a>
+    <a href="/new/category" class="border-2 rounded-xl p-2 text-xl font-heading text-white animate-pulse hover:scale-105 duration-300">Create New Category</a>
     <% categories.forEach((category) =>{ %>
-    <a href="/category/<%= category.id %>" class="text-xl font-text"> <%= category.category_name %></a>
+    <a href="/category/<%= category.id %>" class="text-2xl font-text text-white relative group"> <%= category.category_name %>
+      <span class="absolute bottom-0 left-0 h-[2px] w-0 bg-[#D4C9BE] transition-all duration-500 group-hover:w-full"></span>
+    </a>
     <%}) %>
   </div>
   <div>
     <% if(categoryFlag && categoryId){ %>
-    <div class="text-center mx-8 my-6">
-      <a href='/category/<%=categoryId%>/edit' class="text-2xl font-body border-2 border-dashed p-2 rounded-xl ">Edit Category</a>
+    <div class="text-center mx-8 my-6 hover:scale-105 duration-300">
+      <a href='/category/<%=categoryId%>/edit' class="text-2xl font-heading border-2 p-2 rounded-xl animate-pulse ">Edit Category</a>
     </div>
     <% } %>
   </div>

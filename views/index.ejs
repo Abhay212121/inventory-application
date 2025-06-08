@@ -11,20 +11,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-[#222222] text-[#D4C9BE]">
   <%- include('./partials/header') %>
-  <div class="flex ">
+  <div class="flex wrap">
     <%- include('sidebar',{categories:categories, categoryFlag:categoryFlag}) %>
     <div>
-      <p class="text-3xl my-4 ml-10 font-body">Items</p>
+      <p class="text-3xl my-4 ml-10 font-body text-white cursor-default">Items</p>
       <div class="flex flex-wrap gap-8 px-5">
         <% items.forEach((item) =>{ %>
         <%- include('item',{product:item}) %>
         <%})%>
       </div>
-      <div class="absolute w-12 bottom-5 right-10">
+      <div class="absolute w-12 bottom-5 right-10 fill-current text-white border-2 rounded-3xl hover:scale-120 duration-400 hover:bg-black hover:rotate-[180deg] ">
         <a href="/new/item">
-          <img src="/images/add-icon.svg" alt="Icon not found" class="h-fit w-fit">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <title>plus-thick</title>
+            <path d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z" />
+          </svg>
         </a>
       </div>
     </div>
