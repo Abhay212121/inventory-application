@@ -6,7 +6,7 @@ const alphaErr = 'must only contain alphabets.'
 const lengthErr = 'is exceeding the characters.'
 
 const validateCategoryName = [
-    body('categoryName').trim().matches(nameRegex).withMessage(`Category name ${alphaErr}`).isLength({ min: 1, max: 10 }).withMessage(`Category name ${lengthErr}`)
+    body('categoryName').trim().matches(nameRegex).withMessage(`Category name ${alphaErr}`).isLength({ min: 1, max: 20 }).withMessage(`Category name ${lengthErr}`)
 ]
 
 const validateItemName = [

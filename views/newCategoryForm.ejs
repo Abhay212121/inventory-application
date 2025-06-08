@@ -5,18 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="text-[#D4C9BE] bg-[#222222]">
   <%- include('./partials/header') %>
   <div class="flex items-center justify-center mt-10 min-h-100">
-    <form action="/new/category" method="post" class="flex flex-col w-[30%] border-2 p-8 gap-2 border-dashed border-4 rounded-3xl">
-      <p class="font-body text-center mb-4 text-2xl">Create New Category</p>
+    <form action="/new/category" method="post" class="flex flex-col w-[30%] border-2 p-8 gap-2  border-4 rounded-3xl">
+      <p class="font-body text-center mb-4 text-4xl cursor-default">Create New Category</p>
       <%- include('partials/errors',{errors}) %>
-      <label for="categoryName" class="font-text">Category Name</label>
-      <input type=" text" name="categoryName" id="categoryName" placeholder="Enter New Category" class="font-text border-2 p-2 rounded-xl">
-      <button type="submit" class="border-3 rounded-xl border-dashed font-body text-xl w-40 mx-auto mt-4 p-2">Add Category</button>
+      <label for="categoryName" class="font-text text-xl">Category Name</label>
+      <input type=" text" name="categoryName" id="categoryName" placeholder="Enter New Category" class="font-text text-xl border-2 p-2 rounded-xl">
+      <button type="submit" class="border-3 rounded-xl border-dashed font-body text-2xl w-40 mx-auto mt-4 p-2 cursor-pointer hover:border-solid duration-400 hover:scale-105 ">Add Category</button>
     </form>
   </div>
 </body>

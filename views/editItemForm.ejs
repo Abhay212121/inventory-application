@@ -5,21 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="text-[#D4C9BE] bg-[#222222]">
   <%- include('./partials/header') %>
   <div class="flex items-center justify-center mt-10 min-h-100">
-    <form action="/item/edit/<%= item.id %> " method="post" class="flex flex-col w-[30%] border-2 p-8 gap-2 border-dashed border-4 rounded-3xl">
-      <p class="font-body text-center mb-4 text-2xl">Update <%= item.item_name%></p>
+    <form action="/item/edit/<%= item.id %> " method="post" class="flex flex-col w-[30%] border-2 p-8 gap-2 border-4 rounded-3xl">
+      <p class="font-body text-center mb-4 text-4xl cursor-default">Update <%= item.item_name%></p>
       <%- include('partials/errors',{errors}) %>
-      <label for=" itemName" class="font-text">item Name</label>
-      <input type=" text" name="itemName" id="itemName" placeholder="Edit item name" value="<%=item.item_name %>" class="font-text border-2 p-2 rounded-xl">
-      <label for="password" class="font-text">password</label>
-      <input type="text" name="password" id="password" placeholder="Enter password" class="font-text border-2 p-2 rounded-xl">
-      <button type="submit" name="editItemBtn" value="update" class="border-3 rounded-xl border-dashed font-body text-xl w-50 mx-auto mt-4 p-2">Update item</button>
-      <button type="submit" name="editItemBtn" value="delete" class="border-3 rounded-xl border-dashed font-body text-xl w-50 mx-auto mt-4 p-2">Delete item</button>
+      <label for=" itemName" class="font-text text-xl">Item Name</label>
+      <input type=" text" name="itemName" id="itemName" placeholder="Edit item name" value="<%=item.item_name %>" class="font-text border-2 p-2 rounded-xl text-xl text-white">
+      <label for="password" class="font-text text-xl">Password</label>
+      <input type="text" name="password" id="password" placeholder="Enter password" class="font-text border-2 p-2 rounded-xl text-xl text-white">
+      <button type="submit" name="editItemBtn" value="update" class="border-3 rounded-xl border-dashed font-body text-xl w-50 mx-auto mt-4 p-2 cursor-pointer hover:border-solid duration-400 hover:scale-105 text-2xl">Update item</button>
+      <button type="submit" name="editItemBtn" value="delete" class="border-3 rounded-xl border-dashed font-body text-xl w-50 mx-auto mt-4 p-2 cursor-pointer hover:border-solid duration-400 hover:scale-105 text-2xl">Delete item</button>
     </form>
   </div>
 </body>
