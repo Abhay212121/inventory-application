@@ -1,7 +1,7 @@
 const db = require('../db/queries')
 const { body, validationResult } = require('express-validator')
 
-const nameRegex = /^[A-Za-z ]+$/;
+const nameRegex = /^[A-Za-z0-9 ]+$/;
 const alphaErr = 'must only contain alphabets.'
 const lengthErr = 'is exceeding the characters.'
 

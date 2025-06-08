@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const getItems = require('../controllers/itemController');
+const { getItems } = require('../controllers/itemController');
 const { getEditCategoryForm, postCategory } = require('../controllers/editController');
 
 const categoryRoute = Router()

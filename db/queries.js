@@ -37,4 +37,17 @@ const deleteCategoryInDb = async (id) => {
     pool.query(`DELETE FROM category WHERE id=${id}`)
 }
 
-module.exports = { getAllItemsFromDb, getAllCategoriesFromDb, postNewCategoryInDb, getCategoryItemsFromDb, postNewItemInDb, getCategoryNameUsingId, updateCategoryNameInDb, deleteCategoryInDb }
+const getItemById = async (id) => {
+    const { rows } = await pool.query('SELECT * FROM items WHERE id = $1', [id])
+    return rows
+}
+
+const updateItemNameInDb = async (id, newName) => {
+    await pool.query(`UPDATE items SET item_name = ($1) WHERE id = ${id} `, [newName])
+}
+
+const deleteItemFromDb = async (id) => {
+    await pool.query(`DELETE FROM items WHERE id = ${id}`)
+}
+
+module.exports = { getAllItemsFromDb, getAllCategoriesFromDb, postNewCategoryInDb, getCategoryItemsFromDb, postNewItemInDb, getCategoryNameUsingId, updateCategoryNameInDb, deleteCategoryInDb, getItemById, updateItemNameInDb, deleteItemFromDb }

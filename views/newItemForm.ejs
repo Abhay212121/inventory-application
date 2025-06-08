@@ -18,7 +18,7 @@
       <input type=" text" name="itemName" id="itemName" placeholder="Enter New Item" class="font-text border-2 p-2 rounded-xl">
       <label for="selectCategory">Category</label>
       <select name="categoryId" id="selectCategory" class="border-2 p-2 rounded-xl font-text">
-        <option>Select Category</option>
+        <option value="">Select Category</option>
         <% categories.forEach((category) =>{ %>
         <option value=<%= category.id %>> <%=category.category_name %> </option>
         <% }) %>
