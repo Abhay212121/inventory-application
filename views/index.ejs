@@ -11,9 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-[#222222] text-[#D4C9BE] ">
+<body class="bg-[#222222] text-[#D4C9BE] sm:h-screen">
   <%- include('./partials/header') %>
-  <div class="flex flex-col sm:flex-row no-wrap sm:wrap ">
+  <div class="flex flex-col sm:flex-row no-wrap sm:wrap sm:h-150">
     <%- include('sidebar',{categories:categories, categoryFlag:categoryFlag}) %>
     <div class="min-w-30 mb-10 sm:mb-0">
       <p class="text-3xl my-6 sm:my-4 ml-10 font-body text-white cursor-default border-b-2 sm:border-b-0 inline-block sm:block">Items</p>
