@@ -17,14 +17,12 @@
     <%- include('sidebar',{categories:categories, categoryFlag:categoryFlag}) %>
     <div class="min-w-30 mb-10 sm:mb-0">
       <p class="text-3xl my-6 sm:my-4 ml-10 font-body text-white cursor-default border-b-2 sm:border-b-0 inline-block sm:block">Items</p>
-      <div class="flex flex-wrap flex-row gap-8 px-2 sm:px-5 justify-center">
+      <div class="flex flex-wrap flex-row gap-6 sm:gap-8 px-2 sm:px-5 justify-center">
         <% items.forEach((item) =>{ %>
         <%- include('item',{product:item}) %>
         <%})%>
       </div>
-      <!-- <div class="absolute w-12 top-170 sm:bottom-5 right-10 fill-current border-2 text-white  rounded-3xl hover:scale-110 duration-400 hover:bg-[#D4C9BE] hover:text-black hover:rotate-[180deg] "> -->
       <div class="absolute w-10 sm:w-12 bottom-50 sm:bottom-5 right-10 fill-current text-white border-2 rounded-full hover:scale-110 duration-400 hover:bg-[#D4C9BE] hover:text-black hover:rotate-[180deg] ">
-
         <a href="/new/item">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <title>plus-thick</title>
