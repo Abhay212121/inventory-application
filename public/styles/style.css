@@ -313,6 +313,9 @@
   .min-w-30 {
     min-width: calc(var(--spacing) * 30);
   }
+  .min-w-60 {
+    min-width: calc(var(--spacing) * 60);
+  }
   .min-w-80 {
     min-width: calc(var(--spacing) * 80);
   }
