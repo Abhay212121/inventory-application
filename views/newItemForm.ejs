@@ -14,13 +14,13 @@
 <body class="text-[#D4C9BE] bg-[#222222]">
   <%- include('./partials/header') %>
   <div class="flex items-center justify-center mt-10 min-h-100">
-    <form action="/new/item" method="post" class="flex flex-col w-[30%] border-2 p-8 gap-2 border-4 rounded-3xl">
+    <form action="/new/item" method="post" class="flex flex-col w-90 sm:w-120 border-2 p-8 gap-2 border-4 rounded-3xl">
       <p class="font-body text-center mb-4 text-4xl cursor-default">Create New Item</p>
       <%- include('partials/errors',{errors}) %>
       <label for="categoryName" class="font-text text-xl">Item Name</label>
       <input type=" text" name="itemName" id="itemName" placeholder="Enter New Item" class="font-text border-2 p-2 rounded-xl text-xl text-white">
       <label for="selectCategory" class="font-text text-xl">Category</label>
-      <select name="categoryId" id="selectCategory" class="border-2 p-2 rounded-xl font-text text-white bg-[#222222]">
+      <select name="categoryId" id="selectCategory" class="border-2 p-2 rounded-xl font-text text-white bg-[#222222] appearance-none">
         <option value="">Select Category</option>
         <% categories.forEach((category) =>{ %>
         <option value=<%= category.id %>> <%=category.category_name %> </option>
