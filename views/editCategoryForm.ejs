@@ -15,7 +15,7 @@
   <%- include('./partials/header') %>
   <div class=" flex items-center justify-center mt-10 min-h-100">
     <form action="/category/<%= categoryId %>/edit" method="post" class="flex flex-col w-90 sm:w-120 border-2 p-8 gap-2 border-4 rounded-3xl">
-      <p class="font-body text-center mb-4 text-4xl">Update <%= categoryName%></p>
+      <p class="font-body text-center mb-4 text-3xl sm:text-4xl">Update <%= categoryName%></p>
       <%- include('partials/errors',{errors}) %>
       <label for=" categoryName" class="font-text text-xl">Category Name</label>
       <input type=" text" name="categoryName" id="categoryName" placeholder="Edit category name" value="<%=categoryName %>" class="font-text text-white border-2 p-2 rounded-xl text-xl text-xl">

@@ -16,7 +16,7 @@
   <div class="flex flex-col sm:flex-row no-wrap sm:wrap ">
     <%- include('sidebar',{categories:categories, categoryFlag:categoryFlag}) %>
     <div class="min-w-30 ">
-      <p class="text-3xl my-4 ml-10 font-body text-white cursor-default">Items</p>
+      <p class="text-3xl my-4 ml-10 font-body text-white cursor-default border-b-2 sm:border-b-0 inline-block sm:block">Items</p>
       <div class="flex flex-wrap gap-8 px-5">
         <% items.forEach((item) =>{ %>
         <%- include('item',{product:item}) %>

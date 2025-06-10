@@ -14,8 +14,8 @@
 <body class="text-[#D4C9BE] bg-[#222222]">
   <%- include('./partials/header') %>
   <div class="flex items-center justify-center mt-10 min-h-100">
-    <form action="/item/edit/<%= item.id %> " method="post" class="flex flex-col w-[30%] border-2 p-8 gap-2 border-4 rounded-3xl">
-      <p class="font-body text-center mb-4 text-4xl cursor-default">Update <%= item.item_name%></p>
+    <form action="/item/edit/<%= item.id %> " method="post" class="flex flex-col  w-90 sm:w-120 border-2 p-8 gap-2 border-4 rounded-3xl">
+      <p class="font-body text-center mb-4 text-3xl sm:text-4xl cursor-default">Update <%= item.item_name%></p>
       <%- include('partials/errors',{errors}) %>
       <label for=" itemName" class="font-text text-xl">Item Name</label>
       <input type=" text" name="itemName" id="itemName" placeholder="Edit item name" value="<%=item.item_name %>" class="font-text border-2 p-2 rounded-xl text-xl text-white">
