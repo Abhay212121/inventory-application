@@ -1,4 +1,4 @@
-<div class=" border-r-4  min-w-80 min-h-150">
+<div class=" border-r-4 min-w-screen sm:min-w-80 min-h-130 sm:min-h-150 border-b-4 sm:border-b-0">
   <p class="text-3xl font-body my-4 text-center text-white cursor-default">Categories</p>
   <a class="relative group text-3xl block border-b-3 mx-8 text-center  font-text" href="/">All Categories
   </a>
@@ -12,7 +12,7 @@
   </div>
   <div>
     <% if(categoryFlag && categoryId){ %>
-    <div class="text-center mx-8 my-6 hover:scale-105 duration-300">
+    <div class="text-center mx-8 my-8 hover:scale-105 duration-300">
       <a href='/category/<%=categoryId%>/edit' class="text-2xl font-heading border-2 p-2 rounded-xl animate-pulse ">Edit Category</a>
     </div>
     <% } %>
