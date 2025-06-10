@@ -553,6 +553,26 @@
       }
     }
   }
+  .sm\:top-0 {
+    @media (width >= 40rem) {
+      top: calc(var(--spacing) * 0);
+    }
+  }
+  .sm\:top-95 {
+    @media (width >= 40rem) {
+      top: calc(var(--spacing) * 95);
+    }
+  }
+  .sm\:top-125 {
+    @media (width >= 40rem) {
+      top: calc(var(--spacing) * 125);
+    }
+  }
+  .sm\:top-145 {
+    @media (width >= 40rem) {
+      top: calc(var(--spacing) * 145);
+    }
+  }
   .sm\:bottom-5 {
     @media (width >= 40rem) {
       bottom: calc(var(--spacing) * 5);
